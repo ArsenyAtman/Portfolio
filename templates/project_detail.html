@@ -1,16 +1,15 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 left  top">
+{% block content %}
+<div class="card-deck">
+  <div class="card mt-3">
+      <img class="card-img-top" src="{{ project.preview.url }}" alt="Project preview">
       <div class="card-body">
-        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-        <img src="{{ project.preview.url }}">
-        <p class=" text-muted">{{ project.author }} | {{ project.created_on }}</p>
-        <p class="card-text ">{{ object.content | safe }}</p>
+          <h1 class="card-title">{{ project.title }}</h1>
+          <p class="card-subtitle mb-2 text-muted">{{ project.short_description }}</p>
+          <p class="card-text ">{{ object.description | safe }}</p>
+          <a href="{% url 'home' %}" class="btn btn-danger">Return</a>
       </div>
-    </div>
   </div>
 </div>
-
 {% endblock content %}

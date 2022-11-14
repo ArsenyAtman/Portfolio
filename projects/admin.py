@@ -2,9 +2,9 @@ from django.contrib import admin
 from .models import Project
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status','created_on')
-    list_filter = ("status",)
-    search_fields = ['title', 'content']
+    list_display = ('title','created_on')
+    list_filter = ("created_on",)
+    search_fields = ['title', 'description']
     prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(Project, ProjectAdmin)

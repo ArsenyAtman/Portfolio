@@ -3,7 +3,7 @@ from django.views import generic
 from .models import Project
 
 class ProjectList(generic.ListView):
-    queryset = Project.objects.filter(status=1).order_by('-created_on')
+    queryset = Project.objects.order_by('-created_on')
     template_name = 'index.html'
 
 class ProjectDetail(generic.DetailView):
