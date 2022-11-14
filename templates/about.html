@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+
+<div class="container">
+    <div class="card-deck">
+        <div class="card mt-3">
+            <img class="card-img-top" src="{{ project.preview.url }}" alt="Project preview">
+            <div class="card-body">
+                <h1 class="card-title">{{ project.title }}</h1>
+                <p class="card-subtitle mb-2 text-muted">{{ project.short_description }}</p>
+                <p class="card-text ">{{ object.description | safe }}</p>
+                {% if project.youtube_link != '' or project.github_link != '' %}
+                <h5 class="card-title">Links:</h5>
+                {% endif %}
+                {% if project.youtube_link != '' %}
+                <a href="{{ project.youtube_link }}" class="btn btn-danger">YouTube</a>
+                {% endif %}
+                {% if project.github_link != '' %}
+                <a href="{{ project.github_link }}" class="btn btn-dark">GitHub</a>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'home' %}" class="btn btn-secondary">&larr; Return</a>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
