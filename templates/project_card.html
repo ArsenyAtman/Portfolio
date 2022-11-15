@@ -1,6 +1,8 @@
 {% block content %}
-<div class="card mt-3" style="width: 18rem">
-    <img class="card-img-top" style="max-height: 8rem; width: auto" src="{{ project.preview.url }}" alt="Project preview">
+<div class="card mt-3" style="width: 25rem;">
+    {% if project.preview.url != '' %}
+        <img class="card-img-top" style="max-height: 20rem; width: auto" src="{{ project.preview.url }}" alt="Project preview">
+    {% endif %}
     <div class="card-body">
         <h5 class="card-title">{{ project.title }}</h5>
         <p class="card-subtitle mb-2 text-muted">{{ project.short_description }}</p>
