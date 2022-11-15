@@ -27,9 +27,9 @@
                         <p class="text"></p>
                     </div>
                     <h4 class="card-title">Experience:</h4>
-                    <p class="card-text">{{ about.experience }}</p>
+                    <p class="card-text">{{ about.experience|linebreaks }}</p>
                     <h4 class="card-title">Skills:</h4>
-                    <p class="card-text">{{ about.skills }}</p>
+                    <p class="card-text">{{ about.skills|linebreaks }}</p>
                     {% if about.linkedin_link != '' or project.github_link != '' %}
                     <h4 class="card-title">Links:</h4>
                     {% endif %}
